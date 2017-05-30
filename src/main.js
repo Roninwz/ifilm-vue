@@ -3,11 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import axios from 'axios'
 import VueMaterial from 'vue-material'
 import '../node_modules/vue-material/dist/vue-material.css'
 
-import Config from './config' // 配置文件
+import config from './config'
 
 Vue.use(VueMaterial)
 Vue.config.productionTip = false
@@ -28,24 +28,3 @@ new Vue({
     template: '<App/>',
     components: { App }
 })
-
-// red
-// pink
-// purple
-// deep-purple
-// indigo
-// blue
-// light-blue
-// cyan
-// teal
-// green
-// light-green
-// lime
-// yellow
-// amber
-// orange
-// deep-orange
-// brown
-// grey
-// blue-grey
-// white
