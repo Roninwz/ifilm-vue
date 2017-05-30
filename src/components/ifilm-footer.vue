@@ -1,7 +1,9 @@
 <template>
     <div id="footer">
         <md-bottom-bar md-shift>
-            <md-bottom-bar-item v-for="menu in menus" :md-icon="menu.icon">{{menu.name}}</md-bottom-bar-item>
+            <md-bottom-bar-item v-for="menu in menus" :md-icon="menu.icon">
+                <router-link :to="menu.router">{{menu.name}}</router-link>
+            </md-bottom-bar-item>
         </md-bottom-bar>
     
     </div>
@@ -10,21 +12,29 @@
 <script>
 export default {
     name: 'ifilm-footer',
-    data () {
+    data() {
         return {
-            menus:[
+            menus: [
                 {
-                    name:'搜索',
-                    icon:'search'
-                },{
-                    name:'电影',
-                    icon:'movie'
-                },{
-                    name:'电视剧',
-                    icon:'tv'
-                },{
-                  name:'关于',
-                  icon:'contacts'
+                    name: '搜索',
+                    icon: 'search',
+                    router: '/search'
+                }, {
+                    name: '电影',
+                    icon: 'movie',
+                    router: '/movies'
+                }, {
+                    name: '首页',
+                    icon: 'home',
+                    router: '/'
+                }, {
+                    name: '电视剧',
+                    icon: 'tv',
+                    router: '/tvs'
+                }, {
+                    name: '关于',
+                    icon: 'contacts',
+                    router: '/contacts'
                 },
             ]
         }
@@ -55,5 +65,9 @@ export default {
     bottom: 0;
     width: 100vw;
     z-index: 9999
+}
+
+a {
+    text-decoration: none !important;
 }
 </style>

@@ -1,8 +1,12 @@
 <template>
   <div id="index">
+  
     <md-tabs md-fixed>
       <md-tab v-for="(tag,index) in tags" :md-label="tag.name">
-        <md-layout md-gutter>
+        <div style="text-align:center;font-size:2rem;" v-if="isLoading">
+          <i class="fa fa-spinner fa-pulse"></i>
+        </div>
+        <md-layout md-gutter v-if="tag.items.length && !isLoading">
           <md-layout md-flex="45" v-for="item in tag.items" class="row" md-align="center">
             <md-card>
               <md-card-media>
@@ -14,6 +18,9 @@
             </md-card>
           </md-layout>
         </md-layout>
+        <div v-else-if="!isLoading">
+          暂无资源
+        </div>
       </md-tab>
     </md-tabs>
   </div>
@@ -25,6 +32,7 @@ export default {
   name: 'ifilm-index',
   data() {
     return {
+      isLoading: true,
       tags: [{
         name: '最新电影',
         title: 'movies',
@@ -51,6 +59,8 @@ export default {
       that.tags[0].items = response.data.movies
       that.tags[1].items = response.data.tvs
       that.tags[2].items = response.data.animes
+
+      that.isLoading = false
     }).catch(function (error) {
 
     })
@@ -60,7 +70,7 @@ export default {
 
 <style>
 #index {
-  margin-top: 15vw;
+  margin: 64px auto;
 }
 
 .row {
