@@ -7,7 +7,7 @@ import axios from 'axios'
 import VueMaterial from 'vue-material'
 import '../node_modules/vue-material/dist/vue-material.css'
 
-import config from './config'
+import config from '../src/assets/js/config.js'
 
 Vue.use(VueMaterial)
 Vue.config.productionTip = false

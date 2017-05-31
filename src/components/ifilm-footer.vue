@@ -5,10 +5,8 @@
                 <router-link :to="menu.router">{{menu.name}}</router-link>
             </md-bottom-bar-item>
         </md-bottom-bar>
-    
     </div>
 </template>
-
 <script>
 export default {
     name: 'ifilm-footer',
@@ -64,7 +62,7 @@ export default {
     position: fixed;
     bottom: 0;
     width: 100vw;
-    z-index: 9999
+    z-index: 9999;
 }
 
 a {

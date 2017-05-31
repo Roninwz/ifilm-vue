@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import config from '../config';
+import config from '../assets/js/config.js';
 export default {
   name: 'ifilm-index',
   data() {
