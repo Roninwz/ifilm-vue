@@ -23,4 +23,5 @@ export default new Router({
         path: '/contacts',
         component: ifilmTvs
     }]
+   
 })

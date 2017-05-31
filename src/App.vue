@@ -11,8 +11,8 @@ import ifilmHeader from './components/ifilm-header';
 import ifilmFooter from './components/ifilm-footer';
 export default {
   name: 'app',
-  components:{
-  ifilmHeader,ifilmFooter
+  components: {
+    ifilmHeader, ifilmFooter
   }
 }
 </script>
