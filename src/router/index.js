@@ -7,6 +7,7 @@ import ifilmTvs from '../components/ifilm-tvs';
 Vue.use(Router)
 
 export default new Router({
+    mode:'history',
     routes: [{
         path: '/',
         component: ifilmIndex
@@ -23,5 +24,4 @@ export default new Router({
         path: '/contacts',
         component: ifilmTvs
     }]
-   
 })

@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import config from '../assets/js/config.js';
 export default {
   name: 'ifilm-index',
   data() {
@@ -45,9 +44,7 @@ export default {
         name: '最新动漫',
         title: 'animes',
         items: [],
-      },],
-      currentTag: 0,
-
+      }],
     }
   },
   methods: {
@@ -55,7 +52,7 @@ export default {
   },
   mounted() {
     var that = this
-    config.axios.get(config.baseApi + '/test').then(function (response) {
+    axios.get(config.baseApi + '/test').then(function (response) {
       that.tags[0].items = response.data.movies
       that.tags[1].items = response.data.tvs
       that.tags[2].items = response.data.animes

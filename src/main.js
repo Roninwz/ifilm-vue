@@ -4,14 +4,20 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import axios from 'axios'
+import config from '../src/assets/js/config'
 import VueMaterial from 'vue-material'
 import '../node_modules/vue-material/dist/vue-material.css'
+import FastClick from 'fastclick'
 
-import config from '../src/assets/js/config.js'
+// 全局化
+global.axios = axios
+global.config = config
 
 Vue.use(VueMaterial)
 Vue.config.productionTip = false
 
+// 执行fastclick
+FastClick.attach(document.body);
 
 // 主题颜色
 Vue.material.registerTheme('default', {
