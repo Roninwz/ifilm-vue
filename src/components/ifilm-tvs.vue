@@ -1,5 +1,5 @@
 <template>
-  <div id="tv">
+  <div id="container">
     电视剧
   </div>
 </template>
@@ -11,7 +11,5 @@ export default {
 </script>
 
 <style>
-#tv{
-    margin: 64px auto;
-}
+
 </style>

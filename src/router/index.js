@@ -4,10 +4,11 @@ import ifilmIndex from '../components/ifilm-index';
 import ifilmSearch from '../components/ifilm-search';
 import ifilmMovies from '../components/ifilm-movies';
 import ifilmTvs from '../components/ifilm-tvs';
+import ifilmPlay from '../components/ifilm-play';
 Vue.use(Router)
 
 export default new Router({
-    mode:'history',
+    mode: 'history',
     routes: [{
         path: '/',
         component: ifilmIndex
@@ -23,5 +24,9 @@ export default new Router({
     }, {
         path: '/contacts',
         component: ifilmTvs
+    }, {
+        name: 'play',
+        path: '/play/:id',
+        component: ifilmPlay
     }]
 })

@@ -1,5 +1,5 @@
 <template>
-  <div id="movie">
+  <div id="container">
     电影
   </div>
 </template>
@@ -11,7 +11,5 @@ export default {
 </script>
 
 <style>
-#movie{
-    margin: 64px auto;
-}
+
 </style>

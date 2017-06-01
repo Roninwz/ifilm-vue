@@ -1,5 +1,5 @@
 <template>
-  <div id="search">
+  <div id="container">
     搜索
   </div>
 </template>
@@ -11,7 +11,5 @@ export default {
 </script>
 
 <style>
-#search{
-    margin: 64px auto;
-}
+
 </style>

@@ -1,18 +1,18 @@
 <template>
-  <div id="index">
+  <div id="container">
   
     <md-tabs md-fixed>
       <md-tab v-for="(tag,index) in tags" :md-label="tag.name">
-        <div style="text-align:center;font-size:2rem;" v-if="isLoading">
+        <div class="loading" v-if="isLoading">
           <md-spinner md-indeterminate class="md-warn"></md-spinner>
         </div>
         <md-layout md-gutter v-if="tag.items.length && !isLoading">
           <md-layout md-flex="45" v-for="item in tag.items" class="row" md-align="center">
             <md-card>
-              <md-card-media>
-                <img :src="item.cover" >
+              <md-card-media @click.native="play(item.id)">
+                <img :src="item.cover">
               </md-card-media>
-              <md-card-actions>
+              <md-card-actions @click.native="play(item.id)">
                 <div>{{item.title}} </div>
               </md-card-actions>
             </md-card>
@@ -48,11 +48,13 @@ export default {
     }
   },
   methods: {
-
+    play(id) {
+      this.$router.push({ name: 'play', params: { id: id } })
+    }
   },
   mounted() {
     var that = this
-    axios.get(config.baseApi + '/test').then(function (response) {
+    axios.get(config.baseApi + '/films').then(function (response) {
       that.tags[0].items = response.data.movies
       that.tags[1].items = response.data.tvs
       that.tags[2].items = response.data.animes
@@ -66,11 +68,14 @@ export default {
 </script>
 
 <style>
-#index {
-  margin: 64px auto;
-}
-
 .row {
-  margin: 3vw auto
+  margin: 3vw auto;
+}
+.md-tabs{
+  position: fixed!important;
+}
+.md-tabs-content{
+  height: 80vh!important;
+  overflow: auto!important;
 }
 </style>
