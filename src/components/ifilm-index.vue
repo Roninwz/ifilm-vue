@@ -4,7 +4,7 @@
     <md-tabs md-fixed>
       <md-tab v-for="(tag,index) in tags" :md-label="tag.name">
         <div style="text-align:center;font-size:2rem;" v-if="isLoading">
-          <i class="fa fa-spinner fa-pulse"></i>
+          <md-spinner md-indeterminate class="md-warn"></md-spinner>
         </div>
         <md-layout md-gutter v-if="tag.items.length && !isLoading">
           <md-layout md-flex="45" v-for="item in tag.items" class="row" md-align="center">

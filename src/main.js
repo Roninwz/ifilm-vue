@@ -6,6 +6,8 @@ import router from './router'
 import axios from 'axios'
 import config from '../src/assets/js/config'
 import VueMaterial from 'vue-material'
+import '../src/assets/css/google-fonts.css'
+import '../src/assets/css/google-icon.css'
 import '../node_modules/vue-material/dist/vue-material.css'
 import FastClick from 'fastclick'
 
