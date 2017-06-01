@@ -10,7 +10,7 @@
           <md-layout md-flex="45" v-for="item in tag.items" class="row" md-align="center">
             <md-card>
               <md-card-media>
-                <img :src="item.cover" alt="People">
+                <img :src="item.cover" >
               </md-card-media>
               <md-card-actions>
                 <div>{{item.title}} </div>
