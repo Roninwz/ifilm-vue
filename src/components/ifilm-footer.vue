@@ -1,8 +1,8 @@
 <template>
     <div id="footer">
         <md-bottom-bar md-shift>
-            <md-bottom-bar-item v-for="menu in menus" :md-icon="menu.icon">
-                <router-link :to="menu.router">{{menu.name}}</router-link>
+            <md-bottom-bar-item v-for="menu in menus" :md-icon="menu.icon" @click.native="openPage(menu.router)" >
+              {{menu.name}}
             </md-bottom-bar-item>
         </md-bottom-bar>
     </div>
@@ -16,7 +16,7 @@ export default {
                 {
                     name: '搜索',
                     icon: 'search',
-                    router: '/search'
+                    router: 'search'
                 }, {
                     name: '电影',
                     icon: 'movie',
@@ -52,6 +52,9 @@ export default {
         },
         close(ref) {
             console.log('关闭d: ' + ref);
+        },
+        openPage(router){
+           this.$router.push({path:router})
         }
     }
 }
