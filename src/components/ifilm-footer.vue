@@ -65,6 +65,7 @@ export default {
     position: fixed;
     bottom: 0;
     width: 100vw;
+    height: 8vh;
     z-index: 9999;
 }
 

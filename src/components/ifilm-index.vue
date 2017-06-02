@@ -69,13 +69,16 @@ export default {
 
 <style>
 .row {
-  margin: 3vw auto;
+  margin: 1vw auto;
 }
 .md-tabs{
   position: fixed!important;
 }
 .md-tabs-content{
   height: 80vh!important;
-  overflow: auto!important;
+  overflow-y: auto!important;
+}
+.md-tabs .md-tabs-navigation{
+  min-height: 6vh!important;
 }
 </style>
