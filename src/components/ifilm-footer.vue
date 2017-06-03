@@ -5,6 +5,20 @@
               {{menu.name}}
             </md-bottom-bar-item>
         </md-bottom-bar>
+              <md-speed-dial md-mode="scale" class="md-fab-bottom-right">
+      <md-button class="md-fab" md-fab-trigger>
+        <md-icon md-icon-morph>close</md-icon>
+        <md-icon>add</md-icon>
+      </md-button>
+  
+      <md-button class="md-fab md-mini ">
+        <md-icon>email</md-icon>
+      </md-button>
+  
+      <md-button class="md-fab md-mini ">
+        <md-icon>content_copy</md-icon>
+      </md-button>
+    </md-speed-dial>
     </div>
 </template>
 <script>
@@ -16,7 +30,7 @@ export default {
                 {
                     name: '搜索',
                     icon: 'search',
-                    router: 'search'
+                    router: '/search'
                 }, {
                     name: '电影',
                     icon: 'movie',
@@ -32,7 +46,7 @@ export default {
                 }, {
                     name: '关于',
                     icon: 'contacts',
-                    router: '/contacts'
+                    router: '/about'
                 },
             ]
         }
@@ -60,7 +74,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #footer {
     position: fixed;
     bottom: 0;
@@ -70,5 +84,9 @@ export default {
 
 a {
     text-decoration: none !important;
+}
+
+.md-fab.md-fab-bottom-right, .md-speed-dial.md-fab-bottom-right {
+  bottom: 80px!important;
 }
 </style>

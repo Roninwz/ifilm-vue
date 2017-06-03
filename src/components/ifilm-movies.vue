@@ -1,7 +1,7 @@
 <template>
   <div id="container">
   
-    <div style="padding:5vw;margin-bottom:8vh" id="test">
+    <div style="padding:5vw;margin-bottom:8vh">
       <md-layout md-gutter v-if="items.length>0">
         <md-layout md-flex="45" v-for="item in items" class="row" md-align="center">
           <md-card>
@@ -29,7 +29,9 @@ export default {
     return {
       isLoading: true,
       items: [],
-      nextPage: 1
+      nextPage: 1,
+      scroll: 0,
+      isFetched: false
     }
   },
   methods: {
@@ -44,30 +46,31 @@ export default {
       }).catch(error => {
 
       })
-    },
-    refresh: function (done) {
-
-    },
-    infinite: function (done) {
-
     }
+
   },
   mounted() {
     var that = this
-    window.addEventListener('scroll', function () {
-      // console.log(document.body.scrollTop)
-      console.log(document.body.scrollTop +document.body.offsetHeight +60)
-      console.log(document.body.scrollHeight)
-      if (document.body.scrollTop + document.body.offsetHeight > document.body.scrollHeight - 60) {
-        that.fetch()
-      }
+    addEventListener('scroll', () => {
+      this.scroll = document.body.scrollTop + document.body.offsetHeight
     })
     this.fetch()
   },
+  watch: {
+    scroll() {
+      if ((this.scroll > (document.body.scrollHeight - 60)) && !this.isFetched && this.items.length >0) {
+        this.isFetched = true
+        this.fetch()
+      }
+      if (this.scroll < (document.body.scrollHeight - 60)) {
+        this.isFetched = false
+      }
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
 .row {
   margin: 1vw auto;
 }

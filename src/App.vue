@@ -3,6 +3,7 @@
     <ifilm-header></ifilm-header>
     <router-view></router-view>
     <ifilm-footer></ifilm-footer>
+
   </div>
 </template>
 

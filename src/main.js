@@ -24,8 +24,8 @@ FastClick.attach(document.body);
 // 主题颜色
 Vue.material.registerTheme('default', {
     primary: 'yellow',
-    accent: 'purple',
-    warn: 'red',
+    accent: 'red',
+    warn: 'purple',
     background: 'white'
 })
 

@@ -4,13 +4,13 @@
     <md-toolbar>
       <md-button class="md-icon-button">
         <md-icon v-if="isShowBack" @click.native="back()">keyboard_arrow_left</md-icon>
-        <md-icon v-if="!isShowBack" class="md-warn">favorite</md-icon>
+        <!--<md-icon v-if="!isShowBack" class="md-warn">favorite</md-icon>-->
       </md-button>
   
       <h2 class="md-title" style="flex: 1">爱电影</h2>
   
       <md-button class="md-icon-button">
-        <md-icon class="md-warn">favorite</md-icon>
+        <!--<md-icon class="md-warn">favorite</md-icon>-->
       </md-button>
     </md-toolbar>
   
@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #header {
   text-align: center;
   position: fixed;
