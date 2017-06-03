@@ -54,7 +54,7 @@ export default {
   },
   mounted() {
     var that = this
-    axios.get(config.baseApi + '/films').then(function (response) {
+    axios.get(config.baseApi + 'index').then(function (response) {
       that.tags[0].items = response.data.movies
       that.tags[1].items = response.data.tvs
       that.tags[2].items = response.data.animes
@@ -75,7 +75,7 @@ export default {
   position: fixed!important;
 }
 .md-tabs-content{
-  height: 80vh!important;
+  height: 76vh!important;
   overflow-y: auto!important;
 }
 .md-tabs .md-tabs-navigation{

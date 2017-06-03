@@ -10,12 +10,12 @@ import '../src/assets/css/google-fonts.css'
 import '../src/assets/css/google-icon.css'
 import '../node_modules/vue-material/dist/vue-material.css'
 import FastClick from 'fastclick'
-
 // 全局化
 global.axios = axios
 global.config = config
 
 Vue.use(VueMaterial)
+
 Vue.config.productionTip = false
 
 // 执行fastclick
