@@ -17,6 +17,11 @@
       <div class="loading" v-if="isLoading">
         <md-spinner md-indeterminate class="md-warn"></md-spinner>
       </div>
+      <div class="end" style="margin-top:5vw;text-align:center" v-if="!isLoading && isEnd">
+        <md-icon class="md-accent">more_horiz</md-icon>
+        我是有底线的
+        <md-icon class="md-accent">more_horiz</md-icon>
+      </div>
     </div>
   
   </div>
@@ -31,7 +36,8 @@ export default {
       items: [],
       nextPage: 1,
       scroll: 0,
-      isFetched: false
+      isFetched: false,
+      isEnd:false
     }
   },
   methods: {
@@ -40,8 +46,13 @@ export default {
     },
     fetch() {
       axios.get(config.baseApi + 'films?page=' + this.nextPage).then(response => {
-        this.items = this.items.concat(response.data.data)
-        this.nextPage++
+        if (response.data.data.length > 0) {
+          this.items = this.items.concat(response.data.data)
+          this.nextPage++
+        } else {
+            this.isEnd = true
+            this.isLoading = false
+        }
         // this.isLoading = false
       }).catch(error => {
 
@@ -58,7 +69,7 @@ export default {
   },
   watch: {
     scroll() {
-      if ((this.scroll > (document.body.scrollHeight - 60)) && !this.isFetched && this.items.length >0) {
+      if ((this.scroll > (document.body.scrollHeight - 60)) && !this.isFetched && this.items.length > 0 && !this.isEnd) {
         this.isFetched = true
         this.fetch()
       }
