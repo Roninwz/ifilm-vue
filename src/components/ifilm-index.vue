@@ -67,17 +67,19 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .row {
   margin: 1vw auto;
 }
-.md-tabs{
+/*.md-tabs{
   position: fixed!important;
-}
+}*/
 .md-tabs-content{
   height: 76vh!important;
   overflow-y: auto!important;
+  overflow-x:hidden!important;
 }
+
 .md-tabs .md-tabs-navigation{
   min-height: 6vh!important;
 }

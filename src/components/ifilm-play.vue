@@ -39,7 +39,7 @@ export default {
       }  
     },
     mounted() {
-        axios.get(config.baseApi + '/films/' + this.$route.params.id).then(response => {
+        axios.get(config.baseApi + 'films/' + this.$route.params.id).then(response => {
             this.item = response.data
             this.isLoading = false
         }).then(err => {

@@ -96,6 +96,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.md-tabs-content{
+  height: 76vh!important;
+  overflow-y: auto!important;
+  overflow-x:hidden!important;
+}
 </style>
