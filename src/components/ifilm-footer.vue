@@ -15,7 +15,7 @@
         <md-icon>email</md-icon>
       </md-button>
   
-      <md-button class="md-fab md-mini ">
+      <md-button class="md-fab md-mini " onclick="window.location.href='HTTPS://QR.ALIPAY.COM/FKX018082PG71P5SCS0LAF'">
         <md-icon>content_copy</md-icon>
       </md-button>
     </md-speed-dial>
