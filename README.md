@@ -1,7 +1,5 @@
 > 本项目为初学Vue组件化所写，代码写的很粗糙后期不在维护。
 
-> 使用Framework7-vue重构的`爱电影`项目地址：https://github.com/linganmin/ifilm-vue-framework7 欢迎指正与交流
-
 
 ## vue-ifilm
 
